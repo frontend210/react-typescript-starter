@@ -1,5 +1,5 @@
 {
-  "name": "bernard-test",
+  "name": "@frontend210/react-typescript-starter",
   "version": "0.1.0",
   "private": true,
   "author": {
@@ -7,7 +7,7 @@
     "email": "sr.frontenddev210@gmail.com",
     "url": ""
   },
-  "description": "description",
+  "description": "My favorite typescript-based react.js app starter",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
