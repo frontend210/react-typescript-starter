@@ -1,0 +1,18 @@
+{
+  "printWidth": 100,
+  "trailingComma": "all",
+  "tabWidth": 4,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": ["*.md", "*.yml", "*.ts", "*.tsx", "*.css", "*.json"],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}

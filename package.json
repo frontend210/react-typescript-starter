@@ -2,6 +2,12 @@
   "name": "bernard-test",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "frontend210",
+    "email": "sr.frontenddev210@gmail.com",
+    "url": ""
+  },
+  "description": "description",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -13,6 +19,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
+    "rsuite": "^4.8.4",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
@@ -20,13 +27,29 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*",
+    "lint:fix": "eslint src/**/* --fix",
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
+    "isReady": "yarn run format && yarn run lint:fix"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:prettier/recommended"
     ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,css,json,md}": [
+      "yarn run isReady",
+      "pretty-quick --staged"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "browserslist": {
     "production": [
@@ -39,5 +62,23 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "create-react-component-folder": "^0.3.4",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "prettier": "2.1.2",
+    "pretty-quick": "^3.1.0"
   }
 }
